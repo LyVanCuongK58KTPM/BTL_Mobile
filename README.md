@@ -1,4 +1,4 @@
-MÔN HỌC: PHÁT TRIỂN ỨNG DỤNG TRÊN THIẾT BỊ DI ĐỘNG - TEE0419
+MÔN HỌC: PHÁT TRIỂN ỨNG DỤNG TRÊN THIẾT BỊ DI ĐỘNG - TEE0419 
 BÀI TẬP LỚN:
 A. Viết phần mềm trên công cụ Mit App inventor ( xây dựng 1 bài toán đơn giản gồm 3 screen và button gọi sang các screen)
 1. Truy cập: https://appinventor.mit.edu/ và đăng nhập tài khoản
@@ -56,4 +56,23 @@ A. Viết phần mềm trên công cụ Mit App inventor ( xây dựng 1 bài to
 - Mở app trên điện thoại lên, chọn Scan QR Code và quét mã trên màn hình máy tính.
   <img width="1920" height="2560" alt="image" src="https://github.com/user-attachments/assets/a146a607-666b-48fe-afc0-76ece63c7262" />
   <img width="1920" height="2560" alt="image" src="https://github.com/user-attachments/assets/5e6b73be-7617-4e3a-acc4-ebb34258bb47" />
-  
+  <img width="646" height="779" alt="image" src="https://github.com/user-attachments/assets/cb739d6e-7e3c-44d2-9e13-b20b8ddfcd69" />
+9. Giải thích ý nghĩa của Block:
+- Bản chất của việc kéo thả Block
+Trực quan hóa mã nguồn: Về bản chất, mỗi khối block là một "đoạn code" (như cú pháp Java, C#) đã được bao bọc dưới dạng một mảnh ghép hình học có màu sắc riêng biệt theo từng nhóm chức năng (Vòng lặp, Điều kiện, Toán học, Biến...).
+
+Ràng buộc logic vật lý: Các block được thiết kế các mấu lồi/lõm (ngàm kết nối) tương ứng với cấu trúc cú pháp của lập trình. Chúng chỉ có thể khớp chặt vào nhau khi đúng logic và đúng kiểu dữ liệu (ví dụ: không thể nhét một khối chữ "Text" vào ngàm tính toán của phép cộng "Math"). Khi lắp ghép chính xác, phần mềm sẽ phát ra tiếng "tách" trực quan.
+
+- Ưu điểm so với viết code truyền thống (Text-based)
+Loại bỏ lỗi cú pháp: Người học hoàn toàn không phải lo lắng về việc gõ thiếu dấu chấm phẩy ;, thiếu dấu ngoặc { }, hay gõ sai chính tả tên hàm — những lỗi kinh điển khiến code truyền thống bị lỗi không chạy được.
+
+Học tư duy nhanh hơn: Giúp người mới bắt đầu tập trung 100% vào việc phát triển tư duy thuật toán (App hoạt động thế nào? Khi nào bấm nút thì làm gì?) thay vì mất thời gian học thuộc lòng các từ khóa lập trình phức tạp.
+
+Trực quan và dễ nhớ: Màu sắc của các block giúp người lập trình dễ dàng nhận diện vùng quản lý dữ liệu bằng mắt thường nhanh hơn đọc một trang text đen trắng.
+
+- Nhược điểm
+Cồng kềnh khi dự án lớn: Khi ứng dụng phát triển phức tạp với hàng nghìn dòng lệnh, màn hình Blocks sẽ trở thành một "mê cung" khổng lồ, rất rối mắt, khó cuộn chuột để tìm kiếm, quản lý hoặc sửa lỗi.
+
+Bị giới hạn tính năng: Bạn chỉ có thể làm những gì mà các khối block có sẵn hỗ trợ. Việc muốn can thiệp sâu vào nhân hệ điều hành, tối ưu phần cứng hay viết thuật toán xử lý đồ họa nâng cao là bất khả thi nếu so với code thuần (Java/Kotlin).
+
+Tốc độ gõ chậm: Đối với lập trình viên chuyên nghiệp, việc dùng chuột kéo từng khối sẽ chậm hơn rất nhiều so với tốc độ gõ phím từ bàn phím.
