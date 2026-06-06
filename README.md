@@ -140,6 +140,40 @@ B. Viết app sử dụng Android Studio
   * Tránh rủi ro bị mất file, chết link từ máy chủ (Server).
 * **Ứng dụng thực tế:** *Xây dựng ứng dụng Cẩm nang Sơ cứu Y Tế Khẩn Cấp.* Toàn bộ các bài viết hướng dẫn xử lý tai nạn, hình ảnh sơ cứu được lưu sẵn offline dạng HTML/Text trong thư mục `assets/`. Khi người dùng gặp sự cố ở những nơi mất sóng (rừng núi, trên máy bay), app vẫn mở ra trơn tru để cứu hộ kịp thời, không phụ thuộc vào mạng.
 
+### 8. Viết App1:
+- Dữ liệu: Tài liệu bảo mật nội bộ của một công ty
+- công cụ để hiển thị dữ liệu: TextView + ScrollView
+- Vấn đề đặt ra: ác tập đoàn công nghệ lớn hoặc cơ quan đầu não thường có khu vực phòng Lab/phòng Server bảo mật cao. Nhân viên bước vào không được phép kết nối Internet, không có Wifi hay sóng di động để tránh rò rỉ dữ liệu (Data Leakage). Tuy nhiên, khi gặp sự cố kỹ thuật hoặc cần kiểm tra quy trình xử lý an ninh, họ bắt buộc phải có tài liệu hướng dẫn chuẩn để làm theo.
+- Giải pháp thực hiện: Xây dựng ứng dụng "Cẩm nang Quy trình Bảo mật Nội bộ" chạy độc lập hoàn toàn (Offline 100%). Toàn bộ tài liệu mật, các bước xử lý sự cố an ninh hệ thống được mã hóa cấu trúc sẵn dưới dạng JSON lồng mã HTML và lưu thẳng vào thư mục assets/ của ứng dụng. Nhân viên chỉ cần mở điện thoại chuyên dụng của công ty ra là tra cứu được ngay lập tức mà không sợ vi phạm quy định bảo mật mạng.
 
+- Đặc thù dữ liệu (Tệp rules.json trong Assets)
+Tính cấu trúc: Lưu dạng mảng JSON (JSONArray), chia thành các trường dữ liệu cố định (id, title, content) dễ bóc tách.
 
+ + Định dạng sẵn (Rich Text Hybrid): Nội dung chứa các thẻ HTML cơ bản (<b>, <i>, <p>) giúp cài cắm sẵn thuộc tính in đậm, in nghiêng, cách dòng ngay từ kho lưu       trữ thô.
+
+ + Đóng gói tĩnh: Dữ liệu chỉ đọc (Read-only), đi liền với bộ cài đặt app (.apk), hoạt động độc lập không cần Internet.
+
+- Thuật toán xử lý dữ liệu
+ + Đọc file (IO Stream): Quét mảng byte dữ liệu tĩnh từ Assets, chuyển đổi thành chuỗi String văn bản bằng bảng mã UTF-8 để giữ nguyên tiếng Việt có dấu.
+
+ + Phân tích cú pháp (JSON Parsing): Phân rã chuỗi văn bản thành các đối tượng JSON để trích xuất chính xác nội dung theo từng khóa (Key).
+
+ + Tiền xử lý đồ họa (HTML-to-Spanned): Dùng Html.fromHtml() để duyệt chuỗi, bẻ gãy các thẻ <b>, <i> thô và dịch thành văn bản giàu thuộc tính hiển thị (Rich         Text).
+
+- Đối tượng hiển thị dữ liệu (UI Components)
++ TextView: Đối tượng hiển thị chính. Nhận nhiệm vụ vẽ văn bản đã qua xử lý HTML lên màn hình. Ưu điểm là nhẹ, tốn rất ít RAM và CPU, giúp tài liệu mở lên ngay      lập tức so với việc dùng WebViewer cồng kềnh.
+
+ + ScrollView: Thùng chứa bao bọc bên ngoài TextView, kích hoạt tính năng vuốt trượt theo chiều dọc để người dùng cuộn xem toàn bộ nội dung khi quy trình quá dài.
+- Quy Trình thực hiện:
+  + Khởi tạo project mới trên Android Studio:
+    <img width="1117" height="803" alt="image" src="https://github.com/user-attachments/assets/3c89965c-2002-43f4-a6bb-f2c65b97ac67" />
+
+  + Cấu hình các thông số cho dự án bảo mật này:
+
+     Name: Điền CamNangBaoMat (Viết liền không dấu).
+
+     Language: Chọn Java.
+
+     Minimum SDK: Chọn API 21: Android 5.0 (Lollipop).
+    
 
