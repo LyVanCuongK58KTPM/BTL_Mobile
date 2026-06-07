@@ -166,14 +166,86 @@ Tính cấu trúc: Lưu dạng mảng JSON (JSONArray), chia thành các trườ
  + ScrollView: Thùng chứa bao bọc bên ngoài TextView, kích hoạt tính năng vuốt trượt theo chiều dọc để người dùng cuộn xem toàn bộ nội dung khi quy trình quá dài.
 - Quy Trình thực hiện:
   + Khởi tạo project mới trên Android Studio:
-    <img width="1117" height="803" alt="image" src="https://github.com/user-attachments/assets/3c89965c-2002-43f4-a6bb-f2c65b97ac67" />
+  + Chọn Android Views Activity:
+    <img width="1111" height="804" alt="image" src="https://github.com/user-attachments/assets/acd0dc9b-2d18-4f06-a1e8-1edc870e4fcc" />
 
   + Cấu hình các thông số cho dự án bảo mật này:
 
-     Name: Điền CamNangBaoMat (Viết liền không dấu).
+     Name: Điền CamNangBaoMat.
 
      Language: Chọn Java.
 
-     Minimum SDK: Chọn API 21: Android 5.0 (Lollipop).
-    
+     Minimum SDK: Chọn API 24: Android ̃7.0 (Lollipop).
+    <img width="1112" height="808" alt="image" src="https://github.com/user-attachments/assets/b7fc7e54-bd0b-4fa7-9ed9-01e8bb037a8e" />
 
+    + Bấm finish và đợi Android Studio tự động đồng bộ các file dữ liệu nền móng
+    + Tạo thư mục Assets và nạp file JSON Bảo mật:
+      chuột phải vào thư mục app -> Chọn New -> Folder -> Assets Folder -> Bấm Finish
+      <img width="1714" height="903" alt="image" src="https://github.com/user-attachments/assets/626d8c7f-4b08-4ed8-9e73-1a0220a30b9f" />
+    + Click chuột phải vào assets -> Chọn New -> Directory -> Đặt tên là security_docs
+      <img width="1245" height="783" alt="image" src="https://github.com/user-attachments/assets/1059a687-bd2d-488e-b3c6-c9c07184b70f" />
+      <img width="532" height="83" alt="image" src="https://github.com/user-attachments/assets/cd8e109e-2494-4418-bd7b-3bfad4488b95" />
+
+    + Click chuột phải vào thư mục security_docs vừa tạo -> Chọn New -> File -> Đặt tên tệp là rules.json sau đó cấu hình file
+      
+  <img width="524" height="103" alt="image" src="https://github.com/user-attachments/assets/8d83de16-99a5-4c51-9f8e-3490007a0203" />
+  <img width="622" height="381" alt="image" src="https://github.com/user-attachments/assets/867f55f3-dfe3-4ae2-8fbd-ceb3e0802434" />
+
+    + chuyển sang tab activity_main.xml, Sửa chế độ hiển thị sang dạng Code:
+      <img width="915" height="574" alt="image" src="https://github.com/user-attachments/assets/bb6c824e-da7f-47b3-be4b-414ba437c1ad" />
+    + Cấu hình cho file activity_main.xml
+      <img width="1617" height="868" alt="image" src="https://github.com/user-attachments/assets/d8f4020d-1be7-4cbc-8ca0-d45efdb9125a" />
+    + Sửa file logic MainActivity.java:
+      <img width="897" height="869" alt="image" src="https://github.com/user-attachments/assets/d18ddb53-4da7-4f08-8cf4-e389bfbc53b6" />
+    + Kết nối điện thoại với máy tính và cho phép gỡ lỗi qua USB
+    + RunApp trên Android Studio để cài đặt app về điện thoại
+    + Kết quả cài đặt
+      <img width="301" height="255" alt="image" src="https://github.com/user-attachments/assets/a5abbd29-98a0-4ef3-89e4-6b059c14af6a" />
+    + Kết quả sử dụng app không cần internet:
+      <img width="863" height="1896" alt="image" src="https://github.com/user-attachments/assets/50fdc2dd-97e0-464b-9a08-1e15683b9804" />
+
+  ### 9. Viết app2
+  - Tạo dự án mới cho App2:
+    <img width="1108" height="806" alt="image" src="https://github.com/user-attachments/assets/18f3aeff-5426-4778-a20b-9d3ded6b80d1" />
+  - Thêm thư viện gọi API (Volley) vào file Cấu hình:
+    <img width="1204" height="559" alt="image" src="https://github.com/user-attachments/assets/9be1a323-45ec-434d-bf5c-ff38109c78ff" />
+    <img width="634" height="571" alt="image" src="https://github.com/user-attachments/assets/cd82c6c0-b259-461c-865d-d073e667c440" />
+
+ - Khai báo Quyền Internet trong AndroidManifest.xml:
+   <img width="558" height="514" alt="image" src="https://github.com/user-attachments/assets/5511d18a-d7ed-4dc7-a79f-faf9ce0630cf" />
+  <img width="1013" height="787" alt="image" src="https://github.com/user-attachments/assets/58f3f8f7-015e-4bf2-890c-c8811603dc40" />
+ - Thêm thuộc tính android:usesCleartextTraffic="true" vào bên trong thẻ <application ...> để cho phép WebView load được cả các trang web không có bảo mật (HTTP) nếu cần:
+   <img width="1022" height="779" alt="image" src="https://github.com/user-attachments/assets/76ed6c36-b687-4d86-8661-ed9f8a0b0e11" />
+
+ - Tạo thêm 2 Activity mới:
+   <img width="1667" height="903" alt="image" src="https://github.com/user-attachments/assets/2a068859-8044-4e18-9c48-328b84125eab" />
+    <img width="562" height="642" alt="image" src="https://github.com/user-attachments/assets/c857100c-6404-485c-9517-7eb694938b18" />
+- Activity1:
+  + Thiết kế giao diện ( activity_main.xml):
+    <img width="1056" height="869" alt="image" src="https://github.com/user-attachments/assets/e9e42bdf-0f4b-4da9-bf6b-48e381bcffc9" />
+
+  + Viết code điều khiển java (MainActivity.java):
+    <img width="1074" height="874" alt="image" src="https://github.com/user-attachments/assets/afd17262-9b22-4bb3-a3cf-d2b49fe02e46" />
+- Activity2 Giải bài toán đơn giản và gọi API tới https://k58kmt.tdh.io.vn/api :
+  + Thiết kế layout (Activity2.xml):
+    <img width="1011" height="863" alt="image" src="https://github.com/user-attachments/assets/9229fb11-c618-4bc3-81f5-e70d7c7d2b18" />
+  + Xử lí logic và thuật toán(Activity2.java):
+   <img width="1041" height="832" alt="image" src="https://github.com/user-attachments/assets/842097d1-8e97-416f-b806-345ff6afacba" />
+
+- Activity3 dùng webview để truy cập từ trang web https://k58kmt.tdh.io.vn?masv=K225480106100:
+  + Thiết kế layout (Activity3.xml):
+      <img width="1030" height="908" alt="image" src="https://github.com/user-attachments/assets/8c6494fc-9708-4e5b-a523-c0bb692050ab" />
+
+   + Xử lí logic và truyền Url vào(Activity3.java):
+     <img width="1055" height="870" alt="image" src="https://github.com/user-attachments/assets/b1043fd1-2622-4248-9a45-a53dcc5eee3f" />
+
+  - Kết quả cài đặt và chạy app2:
+    <img width="234" height="156" alt="image" src="https://github.com/user-attachments/assets/44b1778c-68e3-428b-aa16-514112b016bd" />
+    + Activity1:
+      <img width="1497" height="844" alt="image" src="https://github.com/user-attachments/assets/1d102d16-25d7-486d-89e3-c4d23198940a" />
+
+     + Activity2:
+       <img width="1504" height="840" alt="image" src="https://github.com/user-attachments/assets/ab9b6d34-4302-4dd2-82b0-5062c1533d5b" />
+      + Activity3:
+        
+        
